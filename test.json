@@ -84,6 +84,7 @@
                   "email": "test@example.com"
                 }
               }
+            }
           },
           "name": {
             "type": "string",
@@ -93,6 +94,7 @@
                   "name": "Test user name"
                 }
               }
+            }
           }
         }
       }
