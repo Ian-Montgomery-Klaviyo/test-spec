@@ -1,0 +1,101 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Support for request body examples",
+    "description": "https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#requestBodyObject",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://httpbin.org/anything"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Multiple examples"
+    },
+    {
+      "name": "Single example"
+    },
+    {
+      "name": "Multiple media types"
+    }
+  ],
+  "paths": {
+    "/requestBody": {
+      "post": {
+        "tags": ["Multiple examples"],
+        "summary": "Within `examples`",
+        "description": "This operation has a `requestBody` with separately maintained example within `examples` at the Media Type Object level.\n\n📚 OpenAPI specification references:\n\n* [3.0.3 Media Type Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#mediaTypeObject)\n\n* [3.1.0 Media Type Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#mediaTypeObject)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "examples": {
+      "user": {
+        "value": {
+          "id": 12343354,
+          "email": "test@example.com",
+          "name": "Test user name"
+        }
+      }
+    },
+    "schemas": {
+      "user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "examples": {
+              "userRegistration": {
+                "value": {
+                  "id": 1234
+                }
+              }
+            }
+          },
+          "email": {
+            "type": "string",
+            "examples": {
+              "userRegistration": {
+                "value": {
+                  "email": "test@example.com"
+                }
+              }
+          },
+          "name": {
+            "type": "string",
+            "examples": {
+              "userRegistration": {
+                "value": {
+                  "name": "Test user name"
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+}
