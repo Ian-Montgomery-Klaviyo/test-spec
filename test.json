@@ -61,34 +61,16 @@
                 "properties": {
                     "id": {
                         "type": "number",
-                        "examples": {
-                            "userRegistration": {
-                                "value": {
-                                    "id": 1234
-                                }
-                            }
-                        }
-                    },
-                    "email": {
-                        "type": "string",
-                        "examples": {
-                            "userRegistration": {
-                                "value": {
-                                    "email": "test@example.com"
-                                }
-                            }
-                        },
-                        "name": {
-                            "type": "string",
-                            "examples": {
-                                "userRegistration": {
-                                    "value": {
-                                        "name": "Test user name"
-                                    }
-                                }
-                            }
-                        }
+                        "example": 1234
                     }
+                },
+                "email": {
+                    "type": "string",
+                    "example": "test@example.com"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "Test user name"
                 }
             }
         }
