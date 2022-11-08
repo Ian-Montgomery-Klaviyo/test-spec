@@ -62,15 +62,15 @@
                     "id": {
                         "type": "number",
                         "example": 1234
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "test@example.com"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Test user name"
                     }
-                },
-                "email": {
-                    "type": "string",
-                    "example": "test@example.com"
-                },
-                "name": {
-                    "type": "string",
-                    "example": "Test user name"
                 }
             }
         }
