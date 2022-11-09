@@ -61,15 +61,21 @@
                 "properties": {
                     "id": {
                         "type": "number",
-                        "example": 1234
+                        "examples": 1234
                     },
                     "email": {
                         "type": "string",
-                        "example": "test@example.com"
+                        "examples": "test@example.com"
                     },
                     "name": {
                         "type": "string",
-                        "example": "Test user name"
+                        "examples": {
+                            "ex1": {
+                                "value": {
+                                    "name": "Test user name"
+                                }
+                            }
+                        }
                     }
                 }
             }
