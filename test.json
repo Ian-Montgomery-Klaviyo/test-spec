@@ -35,6 +35,15 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/user"
+                            },
+                            "examples": {
+                                "ex1": {
+                                    "value": {
+                                        "name": "Test user name",
+                                        "email": "test@example.com",
+                                        "id": 1234
+                                    }
+                                }
                             }
                         }
                     }
@@ -67,15 +76,6 @@
                     },
                     "name": {
                         "type": "string"
-                    }
-                },
-                "examples": {
-                    "ex1": {
-                        "value": {
-                            "name": "Test user name",
-                            "email": "test@example.com",
-                            "id": 1234
-                        }
                     }
                 }
             }
