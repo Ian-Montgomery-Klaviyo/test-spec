@@ -16403,7 +16403,7 @@
               "time": {
                 "type": "string",
                 "format": "date-time",
-                "example": "2022-11-09T21:37:11.691747"
+                "example": "2022-11-10T16:06:57.109560"
               },
               "value": {
                 "type": "number"
