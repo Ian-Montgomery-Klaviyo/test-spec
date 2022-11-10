@@ -9403,6 +9403,14 @@
   },
   "components": {
     "schemas": {
+      "IncludedTags" : {
+        "type": "object",
+        "properties": {
+            "data": {
+              "type": "string"
+            }
+        }
+      },
       "GetCatalogItemResponseCollectionWithIncludedSection": {
         "type": "object",
         "required": [
