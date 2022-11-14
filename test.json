@@ -69,8 +69,8 @@
                     },
                     "name": {
                         "type": "string",
-                        "example": "Test user name",
-                        "default": "Jane Doe"
+                        "example": "Test user name"
+                        "default": "jane doe
                     }
                 }
             }
