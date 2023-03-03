@@ -1,0 +1,1011 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Klaviyo API",
+    "version": "2023-02-22",
+    "description": "The Klaviyo REST API. Please visit https://developers.klaviyo.com for more details.",
+    "contact": {
+      "name": "Klaviyo Developer Experience Team",
+      "email": "developers@klaviyo.com",
+      "url": "https://developers.klaviyo.com"
+    },
+    "termsOfService": "https://www.klaviyo.com/legal/api-terms",
+    "license": {
+      "name": "TO BE POPULATED",
+      "url": "https://www.klaviyo.com/legal"
+    }
+  },
+  "paths": {
+    "/api/profiles/{id}/": {
+      "get": {
+        "operationId": "get_profile",
+        "summary": "Get Profile",
+        "description": "Get the profile with the given profile ID.\nInclude parameters can be provided to get the following related resource data: `lists` memberships, `segments` memberships\"<br><br>*Rate limits*:<br>Burst: `3/s`<br>Steady: `60/m`\n\n**Scopes:**\n`Profiles Read`",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path"
+          },
+          {
+            "name": "fields[list]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "name",
+                  "created",
+                  "updated"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
+            "name": "fields[profile]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "email",
+                  "phone_number",
+                  "external_id",
+                  "anonymous_id",
+                  "first_name",
+                  "last_name",
+                  "organization",
+                  "title",
+                  "image",
+                  "created",
+                  "updated",
+                  "last_event_date",
+                  "location",
+                  "location.address1",
+                  "location.address2",
+                  "location.city",
+                  "location.country",
+                  "location.latitude",
+                  "location.longitude",
+                  "location.region",
+                  "location.zip",
+                  "location.timezone",
+                  "properties"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
+            "name": "fields[segment]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "name",
+                  "created",
+                  "updated"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "lists",
+                  "segments"
+                ]
+              }
+            },
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#relationships"
+          },
+          {
+            "name": "revision",
+            "in": "header",
+            "required": true,
+            "description": "API endpoint revision (format: YYYY-MM-DD[.suffix])",
+            "schema": {
+              "type": "string",
+              "default": "2023-02-22"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "TO BE POPULATED",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProfileResponseWithIncludedSection"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/ClientError"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        },
+        "tags": [
+          "Profiles"
+        ],
+        "x-klaviyo-ratelimit": {
+          "burst": "3/s",
+          "steady": "60/m"
+        },
+        "x-klaviyo-scopes": [
+          "Profiles Read"
+        ],
+        "x-klaviyo-pre-release": "None"
+      }
+    },
+    "/api/events/{id}/": {
+      "get": {
+        "operationId": "get_event",
+        "summary": "Get Event",
+        "description": "Get an event with the given event ID.\nInclude parameters can be provided to get the following related resource data: `metrics`, `profiles`<br><br>*Rate limits*:<br>Burst: `10/s`<br>Steady: `150/m`\n\n**Scopes:**\n`Events Read`",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "description": "ID of the event",
+            "schema": {
+              "type": "string",
+              "description": "ID of the event"
+            },
+            "in": "path"
+          },
+          {
+            "name": "fields[event]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "metric_id",
+                  "profile_id",
+                  "timestamp",
+                  "event_properties",
+                  "datetime",
+                  "uuid"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
+            "name": "fields[metric]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "name",
+                  "created",
+                  "updated",
+                  "integration"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
+            "name": "fields[profile]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "email",
+                  "phone_number",
+                  "external_id",
+                  "anonymous_id",
+                  "first_name",
+                  "last_name",
+                  "organization",
+                  "title",
+                  "image",
+                  "created",
+                  "updated",
+                  "last_event_date",
+                  "location",
+                  "location.address1",
+                  "location.address2",
+                  "location.city",
+                  "location.country",
+                  "location.latitude",
+                  "location.longitude",
+                  "location.region",
+                  "location.zip",
+                  "location.timezone",
+                  "properties"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "metrics",
+                  "profiles"
+                ]
+              }
+            },
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#relationships"
+          },
+          {
+            "name": "revision",
+            "in": "header",
+            "required": true,
+            "description": "API endpoint revision (format: YYYY-MM-DD[.suffix])",
+            "schema": {
+              "type": "string",
+              "default": "2023-02-22"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An Event",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetEventResponseWithIncludedSection"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/ClientError"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        },
+        "tags": [
+          "Events"
+        ],
+        "x-klaviyo-ratelimit": {
+          "burst": "10/s",
+          "steady": "150/m"
+        },
+        "x-klaviyo-scopes": [
+          "Events Read"
+        ],
+        "x-klaviyo-pre-release": "None"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetProfileResponseWithIncludedSection": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Profile"
+              },
+              {
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "lists": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "list"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "segments": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "segment"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/IncludedLists"
+                },
+                {
+                  "$ref": "#/components/schemas/IncludedSegments"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Profile": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "profile"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "example": "01GDDKASAP8TKDDA2GRZDSVP4H",
+            "description": "Primary key that uniquely identifies this profile. Generated by Klaviyo."
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string",
+                "example": "sarah.mason@klaviyo-demo.com",
+                "description": "Individual's email address"
+              },
+              "phone_number": {
+                "type": "string",
+                "example": "+15005550006",
+                "description": "Individual's phone number in E.164 format"
+              },
+              "external_id": {
+                "type": "string",
+                "example": "63f64a2b-c6bf-40c7-b81f-bed08162edbe",
+                "description": "A unique identifier used by customers to associate Klaviyo profiles with profiles in an external system, such as a point-of-sale system. Format varies based on the external system."
+              },
+              "anonymous_id": {
+                "type": "string"
+              },
+              "first_name": {
+                "type": "string",
+                "example": "Sarah",
+                "description": "Individual's first name"
+              },
+              "last_name": {
+                "type": "string",
+                "example": "Mason",
+                "description": "Individual's last name"
+              },
+              "organization": {
+                "type": "string",
+                "example": "Klaviyo",
+                "description": "Name of the company or organization within the company for whom the individual works"
+              },
+              "title": {
+                "type": "string",
+                "example": "Engineer",
+                "description": "Individual's job title"
+              },
+              "image": {
+                "type": "string",
+                "example": "https://images.pexels.com/photos/3760854/pexels-photo-3760854.jpeg",
+                "description": "URL pointing to the location of a profile image"
+              },
+              "created": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time when the profile was created, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "updated": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time when the profile was last updated, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "last_event_date": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time of the most recent event the triggered an update to the profile, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "location": {
+                "$ref": "#/components/schemas/ProfileLocation"
+              },
+              "properties": {
+                "type": "object",
+                "example": {
+                  "pseudonym": "Dr. Octopus"
+                },
+                "description": "An object containing key/value pairs for any custom properties assigned to this profile"
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        },
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ]
+      },
+      "GetEventResponseWithIncludedSection": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "required": [
+              "type",
+              "id",
+              "attributes",
+              "links"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "event"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "description": "The Event ID"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "metric_id": {
+                    "type": "string",
+                    "description": "The Metric ID"
+                  },
+                  "profile_id": {
+                    "type": "string",
+                    "description": "Profile ID of the associated profile, if available"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "description": "Event timestamp in seconds"
+                  },
+                  "event_properties": {
+                    "type": "object",
+                    "description": "Event properties, can include attribution data, identifiers and extra properties"
+                  },
+                  "datetime": {
+                    "type": "string",
+                    "description": "Event timestamp in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+                  },
+                  "uuid": {
+                    "type": "string",
+                    "description": "A unique identifier for the event, this can be used as a cursor in pagination"
+                  }
+                },
+                "required": [
+                  "metric_id"
+                ]
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "metrics": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "metric"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "profiles": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "profile"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
+              }
+            }
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/IncludedMetrics"
+                },
+                {
+                  "$ref": "#/components/schemas/Profile"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "IncludedLists": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "list"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "example": "Y6nRLr",
+            "description": "Primary key that uniquely identifies this list. Generated by Klaviyo."
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "Newsletter",
+                "description": "A helpful name to label the list"
+              },
+              "created": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time when the list was created, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "updated": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time when the list was last updated, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        },
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ]
+      },
+      "IncludedSegments": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "segment"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "Repeat Purchasers",
+                "description": "A helpful name to label the segment "
+              },
+              "created": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time when the segment was created, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "updated": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2022-11-08T00:00:00",
+                "description": "Date and time when the segment was last updated, in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        },
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ]
+      },
+      "ObjectLinks": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "self"
+        ]
+      },
+      "IncludedMetrics": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "metric"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "description": "The Metric ID"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the metric"
+              },
+              "created": {
+                "type": "string",
+                "description": "Creation time in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "updated": {
+                "type": "string",
+                "description": "Last updated time in ISO 8601 format (YYYY-MM-DDTHH:MM:SS.mmmmmm)"
+              },
+              "integration": {
+                "type": "object",
+                "description": "The integration associated with the event"
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        },
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ]
+      },
+      "ProfileLocation": {
+        "type": "object",
+        "properties": {
+          "address1": {
+            "type": "string",
+            "example": "89 E 42nd St",
+            "description": "First line of street address"
+          },
+          "address2": {
+            "type": "string",
+            "example": "1st floor",
+            "description": "Second line of street address"
+          },
+          "city": {
+            "type": "string",
+            "example": "New York",
+            "description": "City name"
+          },
+          "country": {
+            "type": "string",
+            "example": "United States",
+            "description": "Country name"
+          },
+          "latitude": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "example": "40.7128",
+            "description": "Latitude coordinate. We recommend providing a precision of four decimal places."
+          },
+          "longitude": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "example": "74.0060",
+            "description": "Longitude coordinate. We recommend providing a precision of four decimal places."
+          },
+          "region": {
+            "type": "string",
+            "example": "NY",
+            "description": "Region within a country, such as state or province"
+          },
+          "zip": {
+            "type": "string",
+            "example": "10017",
+            "description": "Zip code"
+          },
+          "timezone": {
+            "type": "string",
+            "example": "America/New_York",
+            "description": "Time zone name. We recommend using time zones from the IANA Time Zone Database."
+          }
+        }
+      }
+    },
+    "responses": {
+      "ClientError": {
+        "content": {
+          "application/vnd.api+json": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "errors"
+              ],
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "code",
+                      "title",
+                      "detail"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "detail": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "object",
+                        "properties": {
+                          "pointer": {
+                            "type": "string"
+                          },
+                          "parameter": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Client Error"
+      },
+      "ServerError": {
+        "content": {
+          "application/vnd.api+json": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "errors"
+              ],
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "code",
+                      "title",
+                      "detail"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "detail": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "object",
+                        "properties": {
+                          "pointer": {
+                            "type": "string"
+                          },
+                          "parameter": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Server Error"
+      }
+    },
+    "securitySchemes": {
+      "Klaviyo-API-Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Private key authentication for /api/ endpoints is performed by setting the `Authorization` header to `Klaviyo-API-Key your-private-api-key`<br>For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#authentication",
+        "x-default": "Klaviyo-API-Key your-private-api-key"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://a.klaviyo.com",
+      "description": "Production"
+    }
+  ],
+  "security": [
+    {
+      "Klaviyo-API-Key": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Events",
+      "description": "events"
+    },
+
+    {
+      "name": "Metrics",
+      "description": "metrics"
+    },
+    {
+      "name": "Profiles",
+      "description": "profiles"
+    }
+  ]
+}
