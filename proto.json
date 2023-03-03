@@ -323,7 +323,7 @@
         ],
         "properties": {
           "data": {
-            "anyOf": [
+            "allOf": [
               {
                 "$ref": "#/components/schemas/Profile"
               },
