@@ -1079,7 +1079,7 @@
     "/api/campaign-message-assign-template/": {
       "post": {
         "operationId": "create_campaign_message_assign_template",
-        "summary": "Create Campaign Message Assign Template",
+        "summary": "Assign Campaign Message Template",
         "description": "Creates a non-reusable version of the template and assigns it to the message.<br><br>*Rate limits*:<br>Burst: `10/s`<br>Steady: `150/m`\n\n**Scopes:**\n`Campaigns Write`",
         "parameters": [
           {
@@ -7491,6 +7491,35 @@
             "in": "path"
           },
           {
+            "name": "fields[flow-action]",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "action_type",
+                  "status",
+                  "created",
+                  "updated",
+                  "settings",
+                  "tracking_options",
+                  "send_options",
+                  "send_options.use_smart_sending",
+                  "send_options.is_transactional",
+                  "render_options",
+                  "render_options.shorten_links",
+                  "render_options.add_org_prefix",
+                  "render_options.add_info_link",
+                  "render_options.add_opt_out_language"
+                ]
+              }
+            },
+            "in": "query",
+            "explode": false,
+            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
+          },
+          {
             "name": "fields[flow-message]",
             "required": false,
             "schema": {
@@ -7503,27 +7532,6 @@
                   "content",
                   "created",
                   "updated"
-                ]
-              }
-            },
-            "in": "query",
-            "explode": false,
-            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22/reference/api-overview#sparse-fieldsets"
-          },
-          {
-            "name": "fields[flow]",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "name",
-                  "status",
-                  "archived",
-                  "created",
-                  "updated",
-                  "trigger_type"
                 ]
               }
             },
@@ -8451,6 +8459,15 @@
               "type": "string",
               "default": "2023-02-22"
             }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of results to return per page. Default = 20. Max = 100"
           }
         ],
         "responses": {
@@ -9052,6 +9069,15 @@
               "type": "string",
               "default": "2023-02-22"
             }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of results to return per page. Default = 20. Max = 100"
           }
         ],
         "responses": {
@@ -10239,6 +10265,15 @@
               "type": "string",
               "default": "2023-02-22"
             }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of results to return per page. Default = 20. Max = 100"
           }
         ],
         "responses": {
@@ -12344,6 +12379,7 @@
                   "$ref": "#/components/schemas/CatalogItemResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -12405,6 +12441,7 @@
                 "$ref": "#/components/schemas/CatalogItemResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -12802,6 +12839,7 @@
                   "$ref": "#/components/schemas/EventResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -12899,6 +12937,7 @@
                 "$ref": "#/components/schemas/EventResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -13758,6 +13797,7 @@
                   "$ref": "#/components/schemas/ProfileResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -13855,6 +13895,7 @@
                 "$ref": "#/components/schemas/ProfileResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -14001,6 +14042,40 @@
           }
         }
       },
+      "ProfileAggregateResponseObjectResource": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "profile-aggregate"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "aggregates": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SingleProfileAggregate"
+                }
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        }
+      },
       "FlowResponseObjectResource": {
         "type": "object",
         "required": [
@@ -14066,6 +14141,7 @@
                   "$ref": "#/components/schemas/FlowResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -14127,6 +14203,7 @@
                 "$ref": "#/components/schemas/FlowResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -14447,6 +14524,7 @@
                 "$ref": "#/components/schemas/FlowActionResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -14692,6 +14770,7 @@
                 "$ref": "#/components/schemas/FlowMessageResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -14729,7 +14808,7 @@
           "included": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FlowResponseObjectResource"
+              "$ref": "#/components/schemas/FlowActionResponseObjectResource"
             }
           }
         }
@@ -15045,6 +15124,7 @@
                   "$ref": "#/components/schemas/CampaignResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -15106,6 +15186,7 @@
                 "$ref": "#/components/schemas/CampaignResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -15772,6 +15853,7 @@
                   "$ref": "#/components/schemas/CatalogItemCreateJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -15833,6 +15915,7 @@
                 "$ref": "#/components/schemas/CatalogItemCreateJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -15978,6 +16061,7 @@
                   "$ref": "#/components/schemas/CatalogItemUpdateJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -16039,6 +16123,7 @@
                 "$ref": "#/components/schemas/CatalogItemUpdateJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -16184,6 +16269,7 @@
                   "$ref": "#/components/schemas/CatalogItemDeleteJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -16239,6 +16325,7 @@
                 "$ref": "#/components/schemas/CatalogItemDeleteJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -16378,6 +16465,7 @@
                   "$ref": "#/components/schemas/CatalogVariantCreateJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -16439,6 +16527,7 @@
                 "$ref": "#/components/schemas/CatalogVariantCreateJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -16584,6 +16673,7 @@
                   "$ref": "#/components/schemas/CatalogVariantUpdateJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -16645,6 +16735,7 @@
                 "$ref": "#/components/schemas/CatalogVariantUpdateJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -16790,6 +16881,7 @@
                   "$ref": "#/components/schemas/CatalogVariantDeleteJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -16845,6 +16937,7 @@
                 "$ref": "#/components/schemas/CatalogVariantDeleteJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -16984,6 +17077,7 @@
                   "$ref": "#/components/schemas/CatalogCategoryCreateJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -17045,6 +17139,7 @@
                 "$ref": "#/components/schemas/CatalogCategoryCreateJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -17190,6 +17285,7 @@
                   "$ref": "#/components/schemas/CatalogCategoryUpdateJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -17251,6 +17347,7 @@
                 "$ref": "#/components/schemas/CatalogCategoryUpdateJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -17396,6 +17493,7 @@
                   "$ref": "#/components/schemas/CatalogCategoryDeleteJobResponseObjectResource"
                 },
                 {
+                  "type": "object",
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -17451,6 +17549,7 @@
                 "$ref": "#/components/schemas/CatalogCategoryDeleteJobResponseObjectResource"
               },
               {
+                "type": "object",
                 "relationships": {
                   "type": "object",
                   "properties": {
@@ -24391,20 +24490,12 @@
       "description": "segments"
     },
     {
-      "name": "Subscriptions",
-      "description": "subscriptions"
-    },
-    {
       "name": "Tags",
       "description": "tags"
     },
     {
       "name": "Templates",
       "description": "templates"
-    },
-    {
-      "name": "Tests",
-      "description": "tests"
     },
     {
       "name": "Client",
