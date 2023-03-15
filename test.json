@@ -12379,33 +12379,34 @@
                   "$ref": "#/components/schemas/CatalogItemResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "variants": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-variant"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "variants": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-variant"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -12441,33 +12442,34 @@
                 "$ref": "#/components/schemas/CatalogItemResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "variants": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-variant"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "variants": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-variant"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -12839,7 +12841,106 @@
                   "$ref": "#/components/schemas/EventResponseObjectResource"
                 },
                 {
-                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "metrics": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "metric"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "profiles": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "profile"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/CollectionLinks"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/MetricResponseObjectResource"
+                },
+                {
+                  "$ref": "#/components/schemas/ProfileResponseObjectResource"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "GetEventResponseWithIncludedSection": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventResponseObjectResource"
+              },
+              {
+                "properties": {
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -12896,103 +12997,6 @@
                                 "id": {
                                   "type": "string"
                                 }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "links": {
-            "$ref": "#/components/schemas/CollectionLinks"
-          },
-          "included": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/MetricResponseObjectResource"
-                },
-                {
-                  "$ref": "#/components/schemas/ProfileResponseObjectResource"
-                }
-              ]
-            }
-          }
-        }
-      },
-      "GetEventResponseWithIncludedSection": {
-        "type": "object",
-        "required": [
-          "data"
-        ],
-        "properties": {
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/EventResponseObjectResource"
-              },
-              {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "metrics": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "metric"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "profiles": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "profile"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
                               }
                             }
                           }
@@ -13797,7 +13801,106 @@
                   "$ref": "#/components/schemas/ProfileResponseObjectResource"
                 },
                 {
-                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "lists": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "list"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "segments": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "segment"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/CollectionLinks"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ListResponseObjectResource"
+                },
+                {
+                  "$ref": "#/components/schemas/SegmentResponseObjectResource"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "GetProfileResponseWithIncludedSection": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProfileResponseObjectResource"
+              },
+              {
+                "properties": {
                   "relationships": {
                     "type": "object",
                     "properties": {
@@ -13854,103 +13957,6 @@
                                 "id": {
                                   "type": "string"
                                 }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "links": {
-            "$ref": "#/components/schemas/CollectionLinks"
-          },
-          "included": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ListResponseObjectResource"
-                },
-                {
-                  "$ref": "#/components/schemas/SegmentResponseObjectResource"
-                }
-              ]
-            }
-          }
-        }
-      },
-      "GetProfileResponseWithIncludedSection": {
-        "type": "object",
-        "required": [
-          "data"
-        ],
-        "properties": {
-          "data": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ProfileResponseObjectResource"
-              },
-              {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "lists": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "list"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "segments": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "segment"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
                               }
                             }
                           }
@@ -14042,6 +14048,40 @@
           }
         }
       },
+      "ProfileAggregateResponseObjectResource": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "profile-aggregate"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "aggregates": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SingleProfileAggregate"
+                }
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        }
+      },
       "FlowResponseObjectResource": {
         "type": "object",
         "required": [
@@ -14107,33 +14147,34 @@
                   "$ref": "#/components/schemas/FlowResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "flow-actions": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "flow-action"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "flow-actions": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "flow-action"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -14169,33 +14210,34 @@
                 "$ref": "#/components/schemas/FlowResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "flow-actions": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "flow-action"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "flow-actions": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "flow-action"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -14490,62 +14532,63 @@
                 "$ref": "#/components/schemas/FlowActionResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "flow-messages": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "flow-message"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "flow-messages": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "flow-message"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
                         }
-                      }
-                    },
-                    "flows": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "flow"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                      },
+                      "flows": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "flow"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -14736,31 +14779,32 @@
                 "$ref": "#/components/schemas/FlowMessageResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "flow-action": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "object",
-                          "required": [
-                            "type",
-                            "id"
-                          ],
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "flow-action"
-                              ]
-                            },
-                            "id": {
-                              "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "flow-action": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "required": [
+                              "type",
+                              "id"
+                            ],
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "flow-action"
+                                ]
+                              },
+                              "id": {
+                                "type": "string"
+                              }
                             }
                           }
                         }
@@ -15090,33 +15134,34 @@
                   "$ref": "#/components/schemas/CampaignResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "tags": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "tag"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "tags": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "tag"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -15152,33 +15197,34 @@
                 "$ref": "#/components/schemas/CampaignResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "tags": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "tag"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "tags": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "tag"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -15819,33 +15865,34 @@
                   "$ref": "#/components/schemas/CatalogItemCreateJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-item"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-item"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -15881,33 +15928,34 @@
                 "$ref": "#/components/schemas/CatalogItemCreateJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-item"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-item"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -16027,33 +16075,34 @@
                   "$ref": "#/components/schemas/CatalogItemUpdateJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-item"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-item"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -16089,33 +16138,34 @@
                 "$ref": "#/components/schemas/CatalogItemUpdateJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-item"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-item"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -16235,33 +16285,34 @@
                   "$ref": "#/components/schemas/CatalogItemDeleteJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-item"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-item"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -16291,33 +16342,34 @@
                 "$ref": "#/components/schemas/CatalogItemDeleteJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-item"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-item"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -16431,33 +16483,34 @@
                   "$ref": "#/components/schemas/CatalogVariantCreateJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "variants": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-variant"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "variants": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-variant"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -16493,33 +16546,34 @@
                 "$ref": "#/components/schemas/CatalogVariantCreateJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "variants": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-variant"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "variants": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-variant"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -16639,33 +16693,34 @@
                   "$ref": "#/components/schemas/CatalogVariantUpdateJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "variants": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-variant"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "variants": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-variant"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -16701,33 +16756,34 @@
                 "$ref": "#/components/schemas/CatalogVariantUpdateJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "variants": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-variant"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "variants": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-variant"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -16847,33 +16903,34 @@
                   "$ref": "#/components/schemas/CatalogVariantDeleteJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "variants": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-variant"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "variants": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-variant"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -16903,33 +16960,34 @@
                 "$ref": "#/components/schemas/CatalogVariantDeleteJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "variants": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-variant"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "variants": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-variant"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -17043,33 +17101,34 @@
                   "$ref": "#/components/schemas/CatalogCategoryCreateJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "categories": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-category"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "categories": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-category"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -17105,33 +17164,34 @@
                 "$ref": "#/components/schemas/CatalogCategoryCreateJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "categories": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-category"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "categories": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-category"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -17251,33 +17311,34 @@
                   "$ref": "#/components/schemas/CatalogCategoryUpdateJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "categories": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-category"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "categories": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-category"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -17313,33 +17374,34 @@
                 "$ref": "#/components/schemas/CatalogCategoryUpdateJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "categories": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-category"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "categories": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-category"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
@@ -17459,33 +17521,34 @@
                   "$ref": "#/components/schemas/CatalogCategoryDeleteJobResponseObjectResource"
                 },
                 {
-                  "type": "object",
-                  "relationships": {
-                    "type": "object",
-                    "properties": {
-                      "categories": {
-                        "type": "object",
-                        "required": [
-                          "data"
-                        ],
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": [
-                                "type",
-                                "id"
-                              ],
-                              "properties": {
-                                "type": {
-                                  "type": "string",
-                                  "enum": [
-                                    "catalog-category"
-                                  ]
-                                },
-                                "id": {
-                                  "type": "string"
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "categories": {
+                          "type": "object",
+                          "required": [
+                            "data"
+                          ],
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "type",
+                                  "id"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "catalog-category"
+                                    ]
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -17515,33 +17578,34 @@
                 "$ref": "#/components/schemas/CatalogCategoryDeleteJobResponseObjectResource"
               },
               {
-                "type": "object",
-                "relationships": {
-                  "type": "object",
-                  "properties": {
-                    "categories": {
-                      "type": "object",
-                      "required": [
-                        "data"
-                      ],
-                      "properties": {
-                        "data": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "type",
-                              "id"
-                            ],
-                            "properties": {
-                              "type": {
-                                "type": "string",
-                                "enum": [
-                                  "catalog-category"
-                                ]
-                              },
-                              "id": {
-                                "type": "string"
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {
+                      "categories": {
+                        "type": "object",
+                        "required": [
+                          "data"
+                        ],
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "type",
+                                "id"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "catalog-category"
+                                  ]
+                                },
+                                "id": {
+                                  "type": "string"
+                                }
                               }
                             }
                           }
