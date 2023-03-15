@@ -17912,34 +17912,34 @@
               "description",
               "url"
             ]
-          }
-        },
-        "relationships": {
-          "type": "object",
-          "properties": {
-            "categories": {
-              "type": "object",
-              "required": [
-                "data"
-              ],
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "type",
-                      "id"
-                    ],
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "catalog-category"
-                        ]
-                      },
-                      "id": {
-                        "type": "string"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "categories": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id"
+                      ],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "catalog-category"
+                          ]
+                        },
+                        "id": {
+                          "type": "string"
+                        }
                       }
                     }
                   }
@@ -18184,34 +18184,34 @@
               "price",
               "url"
             ]
-          }
-        },
-        "relationships": {
-          "type": "object",
-          "properties": {
-            "items": {
-              "type": "object",
-              "required": [
-                "data"
-              ],
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "type",
-                      "id"
-                    ],
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "catalog-item"
-                        ]
-                      },
-                      "id": {
-                        "type": "string"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id"
+                      ],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "catalog-item"
+                          ]
+                        },
+                        "id": {
+                          "type": "string"
+                        }
                       }
                     }
                   }
@@ -18403,34 +18403,34 @@
               "external_id",
               "name"
             ]
-          }
-        },
-        "relationships": {
-          "type": "object",
-          "properties": {
-            "items": {
-              "type": "object",
-              "required": [
-                "data"
-              ],
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "type",
-                      "id"
-                    ],
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "catalog-item"
-                        ]
-                      },
-                      "id": {
-                        "type": "string"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id"
+                      ],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "catalog-item"
+                          ]
+                        },
+                        "id": {
+                          "type": "string"
+                        }
                       }
                     }
                   }
@@ -20151,42 +20151,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-item"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-item"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -20319,42 +20319,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-item"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-item"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -20487,42 +20487,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-item"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-item"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -20655,42 +20655,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "variants": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-variant"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "variants": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-variant"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -20823,42 +20823,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "variants": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-variant"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "variants": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-variant"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -20991,42 +20991,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "variants": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-variant"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "variants": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-variant"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -21159,42 +21159,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "categories": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-category"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "categories": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-category"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -21327,42 +21327,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "categories": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-category"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "categories": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-category"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -21495,42 +21495,42 @@
                   "total_count"
                 ]
               },
-              "links": {
-                "$ref": "#/components/schemas/ObjectLinks"
-              }
-            },
-            "relationships": {
-              "type": "object",
-              "properties": {
-                "categories": {
-                  "type": "object",
-                  "required": [
-                    "data"
-                  ],
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": [
-                          "type",
-                          "id"
-                        ],
-                        "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "catalog-category"
-                            ]
-                          },
-                          "id": {
-                            "type": "string"
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "categories": {
+                    "type": "object",
+                    "required": [
+                      "data"
+                    ],
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "type",
+                            "id"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "catalog-category"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
+              },
+              "links": {
+                "$ref": "#/components/schemas/ObjectLinks"
               }
             }
           }
@@ -22339,34 +22339,34 @@
                 "description": "Boolean value indicating whether the catalog item is published."
               }
             }
-          }
-        },
-        "relationships": {
-          "type": "object",
-          "properties": {
-            "categories": {
-              "type": "object",
-              "required": [
-                "data"
-              ],
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "type",
-                      "id"
-                    ],
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "catalog-category"
-                        ]
-                      },
-                      "id": {
-                        "type": "string"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "categories": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id"
+                      ],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "catalog-category"
+                          ]
+                        },
+                        "id": {
+                          "type": "string"
+                        }
                       }
                     }
                   }
@@ -22753,34 +22753,34 @@
                 "description": "The name of the catalog category."
               }
             }
-          }
-        },
-        "relationships": {
-          "type": "object",
-          "properties": {
-            "items": {
-              "type": "object",
-              "required": [
-                "data"
-              ],
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "type",
-                      "id"
-                    ],
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "catalog-item"
-                        ]
-                      },
-                      "id": {
-                        "type": "string"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "type",
+                        "id"
+                      ],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "catalog-item"
+                          ]
+                        },
+                        "id": {
+                          "type": "string"
+                        }
                       }
                     }
                   }
