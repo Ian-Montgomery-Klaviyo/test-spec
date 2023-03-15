@@ -14048,40 +14048,6 @@
           }
         }
       },
-      "ProfileAggregateResponseObjectResource": {
-        "type": "object",
-        "required": [
-          "type",
-          "id",
-          "attributes",
-          "links"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "profile-aggregate"
-            ]
-          },
-          "id": {
-            "type": "string"
-          },
-          "attributes": {
-            "type": "object",
-            "properties": {
-              "aggregates": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/SingleProfileAggregate"
-                }
-              }
-            }
-          },
-          "links": {
-            "$ref": "#/components/schemas/ObjectLinks"
-          }
-        }
-      },
       "FlowResponseObjectResource": {
         "type": "object",
         "required": [
