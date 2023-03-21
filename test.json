@@ -11,7 +11,7 @@
     },
     "termsOfService": "https://www.klaviyo.com/legal/api-terms",
     "license": {
-      "name": "TO BE POPULATED",
+      "name": "License",
       "url": "https://www.klaviyo.com/legal"
     }
   },
@@ -36,24 +36,6 @@
                 ]
               }
             }
-          },
-          {
-            "name": "fields[list]",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "name",
-                  "created",
-                  "updated"
-                ]
-              }
-            },
-            "in": "query",
-            "explode": false,
-            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22.pre/reference/api-overview#sparse-fieldsets"
           },
           {
             "name": "fields[profile]",
@@ -125,24 +107,6 @@
             "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22.pre/reference/api-overview#sparse-fieldsets"
           },
           {
-            "name": "fields[segment]",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "name",
-                  "created",
-                  "updated"
-                ]
-              }
-            },
-            "in": "query",
-            "explode": false,
-            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22.pre/reference/api-overview#sparse-fieldsets"
-          },
-          {
             "name": "filter",
             "in": "query",
             "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22.pre/reference/api-overview#filtering<br>Allowed field(s)/operator(s):<br>`id`: `any`, `equals`<br>`email`: `any`, `equals`<br>`phone_number`: `any`, `equals`<br>`external_id`: `any`, `equals`<br>`_kx`: `equals`<br>`created`: `greater-than`, `less-than`<br>`updated`: `greater-than`, `less-than`",
@@ -151,22 +115,7 @@
             }
           },
           {
-            "name": "include",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "lists",
-                  "segments"
-                ]
-              }
-            },
-            "description": "For more information please visit https://developers.klaviyo.com/en/v2023-02-22.pre/reference/api-overview#relationships"
-          },
-          {
-            "name": "page_cursor",
+            "name": "page[cursor]",
             "in": "query",
             "required": false,
             "schema": {
@@ -201,13 +150,22 @@
               "type": "string",
               "default": "2023-02-22.pre"
             }
+          },
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of results to return per page. Default = 20. Max = 100"
           }
         ],
         "responses": {
           "200": {
-            "description": "TO BE POPULATED",
+            "description": "",
             "content": {
-              "application/vnd.api+json": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetProfileWithPredictiveAnalyticsCollectionWithIncludedSection"
                 }
@@ -215,10 +173,12 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/ClientError"
+            "$ref": "#/components/responses/ClientError",
+            "description": ""
           },
           "5XX": {
-            "$ref": "#/components/responses/ServerError"
+            "$ref": "#/components/responses/ServerError",
+            "description": ""
           }
         },
         "tags": [
@@ -397,9 +357,9 @@
         ],
         "responses": {
           "200": {
-            "description": "TO BE POPULATED",
+            "description": "",
             "content": {
-              "application/vnd.api+json": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetProfileWithPredictiveAnalyticsWithIncludedSection"
                 }
@@ -407,10 +367,12 @@
             }
           },
           "4XX": {
-            "$ref": "#/components/responses/ClientError"
+            "$ref": "#/components/responses/ClientError",
+            "description": ""
           },
           "5XX": {
-            "$ref": "#/components/responses/ServerError"
+            "$ref": "#/components/responses/ServerError",
+            "description": ""
           }
         },
         "tags": [
@@ -424,6 +386,36 @@
           "Profiles Read"
         ],
         "x-klaviyo-pre-release": "ALPHA"
+      }
+    },
+    "/api/lists/{list_id}/profiles/": {
+      "get": {
+        "parameters": [
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of results to return per page. Default = 20. Max = 100"
+          }
+        ]
+      }
+    },
+    "/api/segments/{segment_id}/profiles/": {
+      "get": {
+        "parameters": [
+          {
+            "name": "page[size]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of results to return per page. Default = 20. Max = 100"
+          }
+        ]
       }
     }
   },
@@ -583,12 +575,12 @@
               },
               "inventory_quantity": {
                 "type": "number",
-                "example": 25.0,
+                "example": 25,
                 "description": "The quantity of the catalog item variant currently in stock."
               },
               "price": {
                 "type": "number",
-                "example": 42.0,
+                "example": 42,
                 "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
               },
               "url": {
@@ -1662,54 +1654,6 @@
                 }
               ]
             }
-          }
-        }
-      },
-      "SingleProfileAggregate": {
-        "type": "object",
-        "properties": {
-          "series": {
-            "type": "object"
-          },
-          "total": {
-            "type": "number"
-          }
-        },
-        "required": [
-          "series"
-        ]
-      },
-      "ProfileAggregateResponseObjectResource": {
-        "type": "object",
-        "required": [
-          "type",
-          "id",
-          "attributes",
-          "links"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "profile-aggregate"
-            ]
-          },
-          "id": {
-            "type": "string"
-          },
-          "attributes": {
-            "type": "object",
-            "properties": {
-              "aggregates": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/SingleProfileAggregate"
-                }
-              }
-            }
-          },
-          "links": {
-            "$ref": "#/components/schemas/ObjectLinks"
           }
         }
       },
@@ -3635,7 +3579,7 @@
               },
               "price": {
                 "type": "number",
-                "example": 42.0,
+                "example": 42,
                 "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
               },
               "catalog_type": {
@@ -3799,16 +3743,16 @@
                   2
                 ],
                 "description": "This field controls the visibility of this catalog item variant in product feeds/blocks. This field supports the following values:\n`1`: a product will not appear in dynamic product recommendation feeds and blocks if it is out of stock.\n`0` or `2`: a product can appear in dynamic product recommendation feeds and blocks regardless of inventory quantity.\n",
-                "example": 25.0
+                "example": 25
               },
               "inventory_quantity": {
                 "type": "number",
-                "example": 25.0,
+                "example": 25,
                 "description": "The quantity of the catalog item variant currently in stock."
               },
               "price": {
                 "type": "number",
-                "example": 42.0,
+                "example": 42,
                 "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
               },
               "url": {
@@ -5839,7 +5783,7 @@
               },
               "price": {
                 "type": "number",
-                "example": 42.0,
+                "example": 42,
                 "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
               },
               "description": {
@@ -5977,12 +5921,12 @@
               },
               "inventory_quantity": {
                 "type": "number",
-                "example": 25.0,
+                "example": 25,
                 "description": "The quantity of the catalog item variant currently in stock."
               },
               "price": {
                 "type": "number",
-                "example": 42.0,
+                "example": 42,
                 "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
               },
               "url": {
@@ -6736,7 +6680,7 @@
     "responses": {
       "ClientError": {
         "content": {
-          "application/vnd.api+json": {
+          "application/json": {
             "schema": {
               "type": "object",
               "required": [
@@ -6788,7 +6732,7 @@
       },
       "ServerError": {
         "content": {
-          "application/vnd.api+json": {
+          "application/json": {
             "schema": {
               "type": "object",
               "required": [
@@ -6870,10 +6814,6 @@
       "description": "catalogs"
     },
     {
-      "name": "Datas",
-      "description": "datas"
-    },
-    {
       "name": "Events",
       "description": "events"
     },
@@ -6898,20 +6838,17 @@
       "description": "segments"
     },
     {
-      "name": "Subscriptions",
-      "description": "subscriptions"
-    },
-    {
       "name": "Tags",
       "description": "tags"
     },
     {
       "name": "Templates",
       "description": "templates"
-    },
-    {
-      "name": "Tests",
-      "description": "tests"
     }
-  ]
+  ],
+  "x-readme": {
+    "explorer-enabled": false,
+    "proxy-enabled": true,
+    "samples-enabled": true
+  }
 }
