@@ -1,3 +1,4 @@
+
 {
   "openapi": "3.0.2",
   "info": {
@@ -13289,9 +13290,7 @@
                       "type": "object",
                       "properties": {
                         "variants": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -13328,9 +13327,7 @@
                     "type": "object",
                     "properties": {
                       "variants": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -13694,14 +13691,10 @@
                       "type": "object",
                       "properties": {
                         "metrics": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         },
                         "profiles": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -13745,14 +13738,10 @@
                     "type": "object",
                     "properties": {
                       "metrics": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       },
                       "profiles": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -14696,14 +14685,10 @@
                       "type": "object",
                       "properties": {
                         "lists": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         },
                         "segments": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -14761,14 +14746,10 @@
                     "type": "object",
                     "properties": {
                       "lists": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       },
                       "segments": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -15011,9 +14992,7 @@
                       "type": "object",
                       "properties": {
                         "flow-actions": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -15050,9 +15029,7 @@
                     "type": "object",
                     "properties": {
                       "flow-actions": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -15371,14 +15348,10 @@
                     "type": "object",
                     "properties": {
                       "flow-messages": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       },
                       "flows": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -15593,9 +15566,7 @@
                     "type": "object",
                     "properties": {
                       "flow-action": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -15924,9 +15895,7 @@
                       "type": "object",
                       "properties": {
                         "tags": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -15963,9 +15932,7 @@
                     "type": "object",
                     "properties": {
                       "tags": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -16586,9 +16553,7 @@
                       "type": "object",
                       "properties": {
                         "items": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -16625,9 +16590,7 @@
                     "type": "object",
                     "properties": {
                       "items": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -16745,9 +16708,7 @@
                       "type": "object",
                       "properties": {
                         "items": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -16784,9 +16745,7 @@
                     "type": "object",
                     "properties": {
                       "items": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -16904,9 +16863,7 @@
                       "type": "object",
                       "properties": {
                         "items": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -16937,9 +16894,7 @@
                     "type": "object",
                     "properties": {
                       "items": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -17051,9 +17006,7 @@
                       "type": "object",
                       "properties": {
                         "variants": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -17090,9 +17043,7 @@
                     "type": "object",
                     "properties": {
                       "variants": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -17210,9 +17161,7 @@
                       "type": "object",
                       "properties": {
                         "variants": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -17249,9 +17198,7 @@
                     "type": "object",
                     "properties": {
                       "variants": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -17369,9 +17316,7 @@
                       "type": "object",
                       "properties": {
                         "variants": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -17402,9 +17347,7 @@
                     "type": "object",
                     "properties": {
                       "variants": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -17516,9 +17459,7 @@
                       "type": "object",
                       "properties": {
                         "categories": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -17555,9 +17496,7 @@
                     "type": "object",
                     "properties": {
                       "categories": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -17675,9 +17614,7 @@
                       "type": "object",
                       "properties": {
                         "categories": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -17714,9 +17651,7 @@
                     "type": "object",
                     "properties": {
                       "categories": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -17834,9 +17769,7 @@
                       "type": "object",
                       "properties": {
                         "categories": {
-                          "schema": {
-                            "$ref": "#/components/schemas/RelationshipLinks"
-                          }
+                          "$ref": "#/components/schemas/RelationshipLinks"
                         }
                       }
                     }
@@ -17867,9 +17800,7 @@
                     "type": "object",
                     "properties": {
                       "categories": {
-                        "schema": {
-                          "$ref": "#/components/schemas/RelationshipLinks"
-                        }
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -20475,9 +20406,7 @@
                 "type": "object",
                 "properties": {
                   "items": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -20613,9 +20542,7 @@
                 "type": "object",
                 "properties": {
                   "items": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -20751,9 +20678,7 @@
                 "type": "object",
                 "properties": {
                   "items": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -20889,9 +20814,7 @@
                 "type": "object",
                 "properties": {
                   "variants": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -21027,9 +20950,7 @@
                 "type": "object",
                 "properties": {
                   "variants": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -21165,9 +21086,7 @@
                 "type": "object",
                 "properties": {
                   "variants": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -21303,9 +21222,7 @@
                 "type": "object",
                 "properties": {
                   "categories": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -21441,9 +21358,7 @@
                 "type": "object",
                 "properties": {
                   "categories": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
@@ -21579,9 +21494,7 @@
                 "type": "object",
                 "properties": {
                   "categories": {
-                    "schema": {
-                      "$ref": "#/components/schemas/RelationshipLinks"
-                    }
+                    "$ref": "#/components/schemas/RelationshipLinks"
                   }
                 }
               },
