@@ -13412,6 +13412,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -13475,6 +13478,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -13867,6 +13873,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         },
@@ -13896,6 +13905,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -13966,6 +13978,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       },
@@ -13995,6 +14010,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -14965,6 +14983,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         },
@@ -14994,6 +15015,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -15078,6 +15102,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       },
@@ -15107,6 +15134,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -15331,6 +15361,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -15394,6 +15427,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -15739,6 +15775,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       },
@@ -15768,6 +15807,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -16006,6 +16048,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -16361,6 +16406,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -16424,6 +16472,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17072,6 +17123,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17136,6 +17190,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17281,6 +17338,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17345,6 +17405,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17490,6 +17553,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17548,6 +17614,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17687,6 +17756,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17751,6 +17823,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17896,6 +17971,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17960,6 +18038,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18105,6 +18186,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18163,6 +18247,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18302,6 +18389,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18366,6 +18456,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18511,6 +18604,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18575,6 +18671,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18720,6 +18819,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18778,6 +18880,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -21421,6 +21526,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -21584,6 +21692,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -21747,6 +21858,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -21910,6 +22024,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22073,6 +22190,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22236,6 +22356,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22399,6 +22522,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22562,6 +22688,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22725,6 +22854,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -25455,6 +25587,23 @@
             }
           }
         }
+      },
+      "RelationshipLinks": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string",
+            "format": "uri"
+          },
+          "related": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "self",
+          "related"
+        ]
       },
       "CollectionLinks": {
         "type": "object",
