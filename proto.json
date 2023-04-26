@@ -118,7 +118,10 @@
               },
               "properties": {
                 "type": "object",
-                "additionalProperties": {},
+                "additionalProperties": {
+                  "type": "string",
+                  "type": "int"
+                },
                 "example": {
                   "Brand": "Kids Book",
                   "Categories": [
