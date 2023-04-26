@@ -120,7 +120,7 @@
                 "type": "object",
                 "additionalProperties": {
                   "type": "string",
-                  "type": "int"
+                  "type": "integer"
                 },
                 "example": {
                   "Brand": "Kids Book",
