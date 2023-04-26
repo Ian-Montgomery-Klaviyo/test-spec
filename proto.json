@@ -118,7 +118,7 @@
               },
               "properties": {
                 "type": "object",
-                additionalProperties: true,
+                "additionalProperties": true,
                 "example": {
                   "Brand": "Kids Book",
                   "Categories": [
