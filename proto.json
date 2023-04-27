@@ -117,7 +117,7 @@
                 "description": "The associated metric for the event. An account can have up to 200 unique metrics."
               },
               "properties": {
-                "type": "string",
+                "type": "object",
                 "format": "blob",
                 "example": {
                   "Brand": "Kids Book",
