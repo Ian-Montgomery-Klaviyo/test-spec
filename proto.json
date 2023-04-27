@@ -117,20 +117,20 @@
                 "description": "The associated metric for the event. An account can have up to 200 unique metrics."
               },
               "properties": {
-                "type": "object",
+                "type": "string",
                 "format": "blob",
-                "example": {
-                  "Brand": "Kids Book",
-                  "Categories": [
-                    "Fiction",
-                    "Children"
+                "example": "{
+                  \"Brand\": \"Kids Book\",
+                  \"Categories\": [
+                    \"Fiction\",
+                    \"Children\"
                   ],
-                  "ProductID": 1111,
-                  "ProductName": "Winnie the Pooh",
-                  "$extra": {
-                    "URL": "http://www.example.com/path/to/product",
-                    "ImageURL": "http://www.example.com/path/to/product/image.png"
-                  }
+                  \"ProductID\": 1111,
+                  \"ProductName\": \"Winnie the Pooh\",
+                  \"$extra\": {
+                    \"URL\": \"http://www.example.com/path/to/product\",
+                    \"ImageURL\": \"http://www.example.com/path/to/product/image.png\"
+                  }"
                 },
                 "description": "\n Properties of this event. Any top level property (that are not objects) can be\nused to create segments. The $extra property is a special property. This records any\nnon-segmentable values that can be references later. For example, HTML templates are\nuseful on a segment, but itself is not used in creating a segment. There are limits\nplaced onto the size of the data present. This must not exceed 5 MB. This must not\nexceed 300 event properties. A single string cannot be larger than 100 KB. Each array\nmust not exceed 4000 elements. The properties cannot contain more than 10 nested levels.\n"
               },
