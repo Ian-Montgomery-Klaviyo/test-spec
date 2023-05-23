@@ -9163,7 +9163,7 @@
       "post": {
         "operationId": "query_metric_aggregates",
         "summary": "Query Metric Aggregates",
-        "description": "Query and aggregate event data associated with a metric, including native Klaviyo metrics, integration-specific metrics, and custom events. Queries must be passed in the JSON body of your `POST` request.\n\nResults can be filtered and grouped by time, event, or profile dimensions.\n\n**Request body parameters** (nested under `attributes`):\n\n* `return_fields`: request specific fields using [sparse fieldsets](https://developers.klaviyo.com/en/reference/api_overview#sparse-fieldsets)\n* `sort`: sort results by a specified field, such as `\"-timestamp\"`\n* `page_cursor`: results can be paginated with [cursor-based pagination](https://developers.klaviyo.com/en/reference/api_overview#pagination)\n* `page_size`: limit the number of returned results per page\n* `by`: optional attributes used to group by the aggregation function\n    * When using `by` attributes, an empty `dimensions` response is expected when the counts for the events do not have the associated dimension requested by the set `by` attribute. For example, a query including `\"by\": [\"$flow\"]` will return an empty dimensions response for counts of metrics not associated with a `$flow`\n* `measurement`: the measurement key supports the following values:\n    * `\"sum_value\"`: perform a summation of the `_Event Value_`, optionally partitioned over any dimension provided in the `by` field\n    * `\"count\"`: counts the number of events associated to a metric, optionally partitioned over any dimension provided in the `by` field\n    * `\"unique\"` counts the number of unique customers associated to a metric, optionally partitioned over any dimension provided in the `by` field\n* `interval`: aggregation interval, such as `\"hour\"`,`\"day\"`,`\"week\"`, and `\"month\"`\n* `metric_id`: the metric ID used in the aggregation\n* `filter`: list of filters for specific fields, must include time range using ISO 8601 format (`\"YYYY-MM-DDTHH:MM:SS.mmmmmm\"`)\n    * The time range can be filtered by providing a `greater-or-equal` filter on the datetime field, such as `\"greater-or-equal(datetime,2021-07-01T00:00:00)\"` and a `less-than` filter on the same datetime field, such as `\"less-than(datetime,2022-07-01T00:00:00)\"`\n    * The time range may span a maximum of one year. Time range dates may be set to a maximum of 5 years prior to the current date\n    * Filter the list of supported aggregate dimensions using the common filter syntax, such as `\"equals(URL,\\\"https://www.klaviyo.com/\\\")\"`\n* `timezone`: the timezone used when processing the query. Case sensitive. This field is validated against a list of common timezones from the [IANA Time Zone Database](https://www.iana.org/time-zones)\n    * While the payload accepts a timezone, the response datetimes returned will be in UTC.\n\nFor a comprehensive list of native Klaviyo metrics and their associated attributes for grouping and filtering, please refer to the [metrics attributes guide](https://developers.klaviyo.com/en/docs/supported_metrics_and_attributes).<br><br>*Rate limits*:<br>Burst: `3/s`<br>Steady: `60/m`\n\n**Scopes:**\n`metrics:read`",
+        "description": "Query and aggregate event data associated with a metric, including native Klaviyo metrics, integration-specific metrics, and custom events. Queries must be passed in the JSON body of your `POST` request.\n\nResults can be filtered and grouped by time, event, or profile dimensions.\n\nTo learn more about how to use this endpoint, check out our new [Using the Query Metric Aggregates Endpoint guide](https://developers.klaviyo.com/en/docs/using-the-query-metric-aggregates-endpoint).\n\n**Request body parameters** (nested under `attributes`):\n\n* `return_fields`: request specific fields using [sparse fieldsets](https://developers.klaviyo.com/en/reference/api_overview#sparse-fieldsets)\n* `sort`: sort results by a specified field, such as `\"-timestamp\"`\n* `page_cursor`: results can be paginated with [cursor-based pagination](https://developers.klaviyo.com/en/reference/api_overview#pagination)\n* `page_size`: limit the number of returned results per page\n* `by`: optional attributes used to group by the aggregation function\n    * When using `by` attributes, an empty `dimensions` response is expected when the counts for the events do not have the associated dimension requested by the set `by` attribute. For example, a query including `\"by\": [\"$flow\"]` will return an empty dimensions response for counts of metrics not associated with a `$flow`\n* `measurement`: the measurement key supports the following values:\n    * `\"sum_value\"`: perform a summation of the `_Event Value_`, optionally partitioned over any dimension provided in the `by` field\n    * `\"count\"`: counts the number of events associated to a metric, optionally partitioned over any dimension provided in the `by` field\n    * `\"unique\"` counts the number of unique customers associated to a metric, optionally partitioned over any dimension provided in the `by` field\n* `interval`: aggregation interval, such as `\"hour\"`,`\"day\"`,`\"week\"`, and `\"month\"`\n* `metric_id`: the metric ID used in the aggregation\n* `filter`: list of filters for specific fields, must include time range using ISO 8601 format (`\"YYYY-MM-DDTHH:MM:SS.mmmmmm\"`)\n    * The time range can be filtered by providing a `greater-or-equal` filter on the datetime field, such as `\"greater-or-equal(datetime,2021-07-01T00:00:00)\"` and a `less-than` filter on the same datetime field, such as `\"less-than(datetime,2022-07-01T00:00:00)\"`\n    * The time range may span a maximum of one year. Time range dates may be set to a maximum of 5 years prior to the current date\n    * Filter the list of supported aggregate dimensions using the common filter syntax, such as `\"equals(URL,\\\"https://www.klaviyo.com/\\\")\"`\n* `timezone`: the timezone used when processing the query. Case sensitive. This field is validated against a list of common timezones from the [IANA Time Zone Database](https://www.iana.org/time-zones)\n    * While the payload accepts a timezone, the response datetimes returned will be in UTC.\n\nFor a comprehensive list of native Klaviyo metrics and their associated attributes for grouping and filtering, please refer to the [metrics attributes guide](https://developers.klaviyo.com/en/docs/supported_metrics_and_attributes).<br><br>*Rate limits*:<br>Burst: `3/s`<br>Steady: `60/m`\n\n**Scopes:**\n`metrics:read`",
         "parameters": [
           {
             "name": "revision",
@@ -13308,7 +13308,7 @@
               },
               "price": {
                 "type": "number",
-                "example": 42,
+                "example": 42.0,
                 "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
               },
               "url": {
@@ -13412,6 +13412,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -13475,6 +13478,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -13544,12 +13550,12 @@
               },
               "inventory_quantity": {
                 "type": "number",
-                "example": 25,
+                "example": 25.0,
                 "description": "The quantity of the catalog item variant currently in stock."
               },
               "price": {
                 "type": "number",
-                "example": 42,
+                "example": 42.0,
                 "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
               },
               "url": {
@@ -13867,6 +13873,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         },
@@ -13896,6 +13905,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -13966,6 +13978,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       },
@@ -13995,6 +14010,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -14965,6 +14983,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         },
@@ -14994,6 +15015,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -15078,6 +15102,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       },
@@ -15107,6 +15134,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -15239,6 +15269,51 @@
           }
         }
       },
+      "SingleProfileAggregate": {
+        "type": "object",
+        "properties": {
+          "series": {
+            "type": "object"
+          },
+          "total": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "series"
+        ]
+      },
+      "ProfileAggregateResponseObjectResource": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "attributes",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ProfileAggregateEnum"
+          },
+          "id": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "aggregates": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SingleProfileAggregate"
+                }
+              }
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/ObjectLinks"
+          }
+        }
+      },
       "FlowResponseObjectResource": {
         "type": "object",
         "required": [
@@ -15331,6 +15406,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -15394,6 +15472,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -15739,6 +15820,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       },
@@ -15768,6 +15852,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -15810,20 +15897,23 @@
         ],
         "properties": {
           "data": {
-            "type": "object",
-            "required": [
-              "type",
-              "id"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "flow"
-                ]
-              },
-              "id": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "type",
+                "id"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "flow"
+                  ]
+                },
+                "id": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -15948,20 +16038,23 @@
         ],
         "properties": {
           "data": {
-            "type": "object",
-            "required": [
-              "type",
-              "id"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "flow-message"
-                ]
-              },
-              "id": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "type",
+                "id"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "flow-message"
+                  ]
+                },
+                "id": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -16006,6 +16099,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -16041,20 +16137,23 @@
         ],
         "properties": {
           "data": {
-            "type": "object",
-            "required": [
-              "type",
-              "id"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "flow-action"
-                ]
-              },
-              "id": {
-                "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "type",
+                "id"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "flow-action"
+                  ]
+                },
+                "id": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -16361,6 +16460,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -16424,6 +16526,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17072,6 +17177,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17136,6 +17244,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17281,6 +17392,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17345,6 +17459,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17490,6 +17607,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17548,6 +17668,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17687,6 +17810,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17751,6 +17877,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -17896,6 +18025,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -17960,6 +18092,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18105,6 +18240,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18163,6 +18301,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18302,6 +18443,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18366,6 +18510,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18511,6 +18658,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18575,6 +18725,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -18720,6 +18873,9 @@
                                   }
                                 }
                               }
+                            },
+                            "links": {
+                              "$ref": "#/components/schemas/RelationshipLinks"
                             }
                           }
                         }
@@ -18778,6 +18934,9 @@
                                 }
                               }
                             }
+                          },
+                          "links": {
+                            "$ref": "#/components/schemas/RelationshipLinks"
                           }
                         }
                       }
@@ -19166,7 +19325,7 @@
               },
               "price": {
                 "type": "number",
-                "example": 42,
+                "example": 42.0,
                 "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
               },
               "catalog_type": {
@@ -19317,7 +19476,7 @@
                   },
                   "price": {
                     "type": "number",
-                    "example": 42,
+                    "example": 42.0,
                     "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
                   },
                   "url": {
@@ -19432,16 +19591,16 @@
                   2
                 ],
                 "description": "This field controls the visibility of this catalog item variant in product feeds/blocks. This field supports the following values:\n`1`: a product will not appear in dynamic product recommendation feeds and blocks if it is out of stock.\n`0` or `2`: a product can appear in dynamic product recommendation feeds and blocks regardless of inventory quantity.\n",
-                "example": 25
+                "example": 25.0
               },
               "inventory_quantity": {
                 "type": "number",
-                "example": 25,
+                "example": 25.0,
                 "description": "The quantity of the catalog item variant currently in stock."
               },
               "price": {
                 "type": "number",
-                "example": 42,
+                "example": 42.0,
                 "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
               },
               "url": {
@@ -19599,12 +19758,12 @@
                   },
                   "inventory_quantity": {
                     "type": "number",
-                    "example": 25,
+                    "example": 25.0,
                     "description": "The quantity of the catalog item variant currently in stock."
                   },
                   "price": {
                     "type": "number",
-                    "example": 42,
+                    "example": 42.0,
                     "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
                   },
                   "url": {
@@ -21421,6 +21580,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -21584,6 +21746,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -21747,6 +21912,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -21910,6 +22078,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22073,6 +22244,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22236,6 +22410,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22399,6 +22576,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22562,6 +22742,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -22725,6 +22908,9 @@
                             }
                           }
                         }
+                      },
+                      "links": {
+                        "$ref": "#/components/schemas/RelationshipLinks"
                       }
                     }
                   }
@@ -23545,7 +23731,7 @@
               },
               "price": {
                 "type": "number",
-                "example": 42,
+                "example": 42.0,
                 "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
               },
               "description": {
@@ -23683,7 +23869,7 @@
                   },
                   "price": {
                     "type": "number",
-                    "example": 42,
+                    "example": 42.0,
                     "description": "This field can be used to set the price on the catalog item, which is what gets displayed for the item when included in emails. For most price-update use cases, you will also want to update the `price` on any child variants, using the [Update Catalog Variant Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_variant)."
                   },
                   "url": {
@@ -23790,12 +23976,12 @@
               },
               "inventory_quantity": {
                 "type": "number",
-                "example": 25,
+                "example": 25.0,
                 "description": "The quantity of the catalog item variant currently in stock."
               },
               "price": {
                 "type": "number",
-                "example": 42,
+                "example": 42.0,
                 "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
               },
               "url": {
@@ -23908,12 +24094,12 @@
                   },
                   "inventory_quantity": {
                     "type": "number",
-                    "example": 25,
+                    "example": 25.0,
                     "description": "The quantity of the catalog item variant currently in stock."
                   },
                   "price": {
                     "type": "number",
-                    "example": 42,
+                    "example": 42.0,
                     "description": "This field can be used to set the price on the catalog item variant, which is what gets displayed for the item variant when included in emails. For most price-update use cases, you will also want to update the `price` on any parent items using the [Update Catalog Item Endpoint](https://developers.klaviyo.com/en/reference/update_catalog_item)."
                   },
                   "url": {
@@ -25455,6 +25641,23 @@
             }
           }
         }
+      },
+      "RelationshipLinks": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string",
+            "format": "uri"
+          },
+          "related": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "self",
+          "related"
+        ]
       },
       "CollectionLinks": {
         "type": "object",
