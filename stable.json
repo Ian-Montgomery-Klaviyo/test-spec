@@ -23891,11 +23891,9 @@
                     "unset": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "string",
+                            "default" "sku"
                         },
-                        "example": [
-                            "skus"
-                        ],
                         "description": "Remove a key or keys (and their values) completely from properties"
                     }
                 }
