@@ -9328,7 +9328,63 @@
               "schema": {
                 "$ref": "#/components/schemas/ImageCreateQuery"
               }
-            },
+            }
+          },
+          "description": "This DTO is used when the file is provided via url or `data:` uri"
+        }
+      }
+    },
+    "/api/images": {
+      "post": {
+        "operationId": "upload_image_file",
+        "summary": "Upload Image File",
+        "description": "Import an image from a url or data uri.\n\nIf you want to upload an image from a file, use the Upload Image API instead.<br><br>*Rate limits*:<br>Burst: `3/s`<br>Steady: `100/d`\n\n**Scopes:**\n`images:write`",
+        "parameters": [
+          {
+            "name": "revision",
+            "in": "header",
+            "required": true,
+            "description": "API endpoint revision (format: YYYY-MM-DD[.suffix])",
+            "schema": {
+              "type": "string",
+              "default": "2023-09-15"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostImageResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/ClientError",
+            "description": ""
+          },
+          "5XX": {
+            "$ref": "#/components/responses/ServerError",
+            "description": ""
+          }
+        },
+        "x-klaviyo-scopes": [
+          "images:write"
+        ],
+        "tags": [
+          "Images"
+        ],
+        "x-klaviyo-ratelimit": {
+          "burst": "3/s",
+          "steady": "100/d"
+        },
+        "x-klaviyo-pre-release": "None",
+        "requestBody": {
+          "required": true,
+          "content": {
             "multipart/form-data": {
               "schema":{
                 "type": "object",
