@@ -37149,7 +37149,6 @@
             "$ref": "#/components/schemas/EmailEnum"
           },
           "can_receive_marketing": {
-            "type": "boolean",
             "enum": [
               false
             ]
